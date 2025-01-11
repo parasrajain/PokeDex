@@ -4,8 +4,9 @@ import "../index.css"
 export const Pokemon=()=>{
     const [pokemon,setPokemon]=useState([]);
     const [loading,setloading]=useState(true);
+    const [search,setsearch]=useState("")
     
-        const API="https://pokeapi.co/api/v2/pokemon?limit=24"
+    const API="https://pokeapi.co/api/v2/pokemon?limit=50"
 
 
   const fetchPokemon=async()=>{
@@ -33,6 +34,7 @@ export const Pokemon=()=>{
   useEffect(() => {
     fetchPokemon();
   }, []);
+  const searchData=pokemon.filter((curPokemon)=>curPokemon.name.toLowerCase().includes(search.toLowerCase()));
 
   if(loading)
   {
@@ -41,19 +43,27 @@ export const Pokemon=()=>{
     );
   }
   return (
-        <div>
-            <div>Let's Catch Pokemon</div>
+    
+        <section className="container">
+            <header>
+                <h1 className="">Let's Catch Pokemon</h1>
+            </header>
+            <div className="pokemon-search">
+                <input type="text" placeholder="Search Pokemon"  value={search} onChange={(e)=>setsearch(e.target.value)}/>
+
+            </div>
             <div>
-                <ul>
+                <div className="cards">
                     {
-                        pokemon.map((curPokemon)=>{
+                        searchData.map((curPokemon)=>{
                             return (
                             <PokeCard key={curPokemon.id} pokemonData={curPokemon} />
-                        )
+                        );
                         })
                     }
-                </ul>
+                </div>
             </div>
-        </div>
+        </section>
+        
     );
 }

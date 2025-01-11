@@ -1,12 +1,13 @@
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import "./index.css";
+import "./App.css"
 import { Pokemon } from "./components/Pokemon";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 function App() {
   
   return (
-    <div className="App">
+    <div >
       <Pokemon />
     </div>
   );

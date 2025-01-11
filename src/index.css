@@ -11,11 +11,13 @@
 
 html {
   font-size: 62.5%;
+  
 }
 
 body {
   width: 100%;
   background-color: #eff3ff;
+  background-image: url('./images/background.png' );
 }
 
 h1,
@@ -28,7 +30,7 @@ h6 {
 }
 
 h1 {
-  font-size: 5.4rem;
+  font-size: 4.4rem;
   font-weight: bold;
   color: #000 !important;
   text-align: center;
@@ -48,6 +50,8 @@ span {
 }
 
 .container {
+  /* width: 1000px; */
+  /* background-color: red; */
   max-width: 152rem;
   margin: auto;
 }
@@ -62,7 +66,7 @@ span {
 }
 
 header {
-  margin: 3.2rem 0;
+  margin: 1.2rem 0;
 }
 
 .pokemon-search {
@@ -76,7 +80,7 @@ header {
   display: flex;
   justify-content: center;
 
-  & .pokemon-card {
+  &.pokemon-card {
     min-height: 32rem;
   }
 }
@@ -99,24 +103,27 @@ input[type="text"] {
 }
 
 .cards {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  /* grid-template-columns: repeat(4, 1fr); */
   justify-content: center;
   align-items: center;
   gap: 3.2rem;
 }
 
 .pokemon-card {
-  width: 36rem;
-  min-height: 42rem;
+  width: 28rem;
+  min-height: 25rem;
+  height: 48rem;
+  /* background-color: red; */
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
     rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   background-color: #fff;
-  border-radius: 0.2rem;
-  -webkit-border-radius: 0.2rem;
-  -moz-border-radius: 0.2rem;
-  -ms-border-radius: 0.2rem;
-  -o-border-radius: 0.2rem;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
   padding: 1.6rem;
   position: relative;
 }
